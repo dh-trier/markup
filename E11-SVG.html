@@ -154,10 +154,11 @@
     
 
 ---
-### Weitere Merkmale
+### Design-Merkmale
 * Für Linien
   * `stroke`: Linienfarbe
   * `stroke-width`: Linienbreite 
+  * `stroke-opacity`: Transparenz
 * Für Flächen
   * `fill`: Farbe der Füllung
 
@@ -200,6 +201,9 @@
 * Vorteile von CSS-Nutzung
   * SVG-Code wird übersichtlicher
   * Design-Änderungen sind leichter umzusetzen
+* Mischform ist möglich
+  * Wiederkehrende Designs im HEAD definieren
+  * Einmalige Designs direkt beim SVG-Element
 
 
 ---
@@ -207,16 +211,92 @@
 
 <img height="450" data-src="img/E11/SVG-CSS_code.png">
 
+<small><a href="https://raw.githubusercontent.com/dh-trier/markup/main/examples/SVG/svg-and-css.html">Code zum Download</a></small>
 
 ---
 ### SVG+CSS: Einfaches Beispiel (Ergebnis)
 
 <img height="450" data-src="img/E11/SVG-CSS_image.png">
 
+<small><a href="https://raw.githubusercontent.com/dh-trier/markup/main/examples/SVG/svg-and-css.html">Code zum Download</a></small>
+
+
+---
+### Verlauf mit `linearGradient`
+
+<svg width="600" height="200">
+    <defs>
+    <linearGradient id="verlauf1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#dfac20" />
+      <stop offset="100%" stop-color="#3983ab" />
+    </linearGradient>
+  </defs>
+<ellipse cx="200" cy="80" rx="120" ry="70" fill="url(#verlauf1)"/>
+</svg>  
+
+```
+<svg width="600" height="200">
+    <defs>
+    <linearGradient id="verlauf1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#dfac20" />
+      <stop offset="100%" stop-color="#3983ab" />
+    </linearGradient>
+  </defs>
+<ellipse cx="200" cy="80" rx="120" ry="70" fill="url(#verlauf1)"/>
+</svg>  
+```
+
+--
+## (4) Text in SVG
+
+
+---
+### Text in SVG: Einfaches Beispiel (Code)
+
+<img height="450" data-src="img/E11/text-in-SVG_code.png">
+
+<small><a href="https://raw.githubusercontent.com/dh-trier/markup/main/examples/SVG/text-in-svg.html">Code zum Download</a></small>
+
+---
+### SVG+CSS: Einfaches Beispiel (Ergebnis)
+
+<img height="450" data-src="img/E11/text-in-SVG_image.png">
+
+<small><a href="https://raw.githubusercontent.com/dh-trier/markup/main/examples/SVG/text-in-svg.html">Code zum Download</a></small>
+
+
+--
+## Interaktion und Animation
+
+
+---
+### Beispiel für Interaktion: `hover` (Code)
+
+<img height="450" data-src="img/E11/interaktion_code.png">
+
+<small><a href="https://raw.githubusercontent.com/dh-trier/markup/main/examples/SVG/interactive.html">Code zum Download</a></small>
+
+---
+### Beispiel für Interaktion (Ergebnis)
+
+<img height="450" data-src="img/E11/interaktion_image.png">
+
+<small><a href="https://raw.githubusercontent.com/dh-trier/markup/main/examples/SVG/text-in-svg.html">Code zum Download</a></small>
+
+---
+### Beispiel: interaktiver Plot
+<a href="img/E11/sentlen-romans_101+500.svg"><img height="450" data-src="img/E11/sentlen-romans_101+500.svg"></a>
+
+
+--
+## (5) Tools für SVG 
+* Inkscape
+* pygal
 
 
 
-
+--
+## Abschluss
 
 
 ---

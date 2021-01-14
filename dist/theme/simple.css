@@ -123,6 +123,10 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   max-width: 95%;
   max-height: 95%; }
 
+.reveal img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) }
+
+
 .reveal strong,
 .reveal b {
   font-weight: bold; }
