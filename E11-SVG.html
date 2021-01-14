@@ -49,12 +49,13 @@
 
 
 ---
-### Was ist SVG
-* Ein XML-basiertes System zur Darstellung von Grafiken
-* Kann in HTML (oder Markdown) integriert werden
-* Folgt den allgemeinen Regeln von XML
-* Kann von Hand geschrieben oder generiert werden
-* Enthält auch interaktive oder dynamische Elemente
+### Was ist SVG?
+* Ein XML-basiertes System zur Darstellung von Grafiken <!-- .element: class="fragment" data-fragment-index="1" -->
+* Folgt den allgemeinen Regeln von XML <!-- .element: class="fragment" data-fragment-index="2" -->
+* Kann allein stehen oder in HTML (oder Markdown) integriert werden <!-- .element: class="fragment" data-fragment-index="3" -->
+* Kann von Hand geschrieben oder generiert werden <!-- .element: class="fragment" data-fragment-index="4" -->
+* Enthält auch interaktive oder dynamische Elemente <!-- .element: class="fragment" data-fragment-index="5" -->
+* Wird in einem 2D-Koordinatensystem verortet <!-- .element: class="fragment" data-fragment-index="6" -->
 
 
 ---
@@ -147,6 +148,20 @@
 
 
 ---
+### `polyline`: Beispiel
+
+<svg width="500" height="300">
+  <polyline id="eins" points="210,10 240,40 210,70 240,100 210,130 240,160 210,190" fill="none" stroke="black" stroke-width="3"/>
+</svg>
+
+```xml
+<svg width="500" height="300">
+  <polyline id="eins" points="210,10 240,40 210,70 240,100 210,130 240,160 210,190" fill="none" stroke="black" stroke-width="3"/>
+</svg>
+```
+
+
+---
 ### Polygon `polygon`
 * Ein Verbund von Linien, der durch mehrere Koordinatenpunkte definiert ist
 * Das Polygon wird automatisch geschlossen
@@ -196,12 +211,12 @@
 
 ---
 ### Grundidee
-* Wie bei HTML: Trennung von Inhalt und Darstellung
-* Bei SVG: Darstellung über Attribute oder CSS möglich
-* Vorteile von CSS-Nutzung
+* Wie bei HTML: Trennung von Inhalt und Darstellung <!-- .element: class="fragment" data-fragment-index="1" -->
+* Bei SVG: Darstellung über Attribute oder CSS möglich <!-- .element: class="fragment" data-fragment-index="2" -->
+* Vorteile von CSS-Nutzung <!-- .element: class="fragment" data-fragment-index="3" -->
   * SVG-Code wird übersichtlicher
   * Design-Änderungen sind leichter umzusetzen
-* Mischform ist möglich
+* Mischform ist möglich <!-- .element: class="fragment" data-fragment-index="4" -->
   * Wiederkehrende Designs im HEAD definieren
   * Einmalige Designs direkt beim SVG-Element
 
@@ -226,23 +241,23 @@
 
 <svg width="600" height="200">
     <defs>
-    <linearGradient id="verlauf1" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="verlauf1" x1="0%" y1="0%" x2="50%" y2="100%">
       <stop offset="0%" stop-color="#dfac20" />
       <stop offset="100%" stop-color="#3983ab" />
     </linearGradient>
   </defs>
-<ellipse cx="200" cy="80" rx="120" ry="70" fill="url(#verlauf1)"/>
+<ellipse cx="300" cy="80" rx="150" ry="70" fill="url(#verlauf1)"/>
 </svg>  
 
 ```
 <svg width="600" height="200">
     <defs>
-    <linearGradient id="verlauf1" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="verlauf1" x1="0%" y1="0%" x2="50%" y2="100%">
       <stop offset="0%" stop-color="#dfac20" />
       <stop offset="100%" stop-color="#3983ab" />
     </linearGradient>
   </defs>
-<ellipse cx="200" cy="80" rx="120" ry="70" fill="url(#verlauf1)"/>
+<ellipse cx="300" cy="80" rx="150" ry="70" fill="url(#verlauf1)"/>
 </svg>  
 ```
 
@@ -284,26 +299,40 @@
 ```xml
 <svg width="600" height="400">
 <circle id="kreis" cx="150" cy="100" r="80" fill="#c32e04" />
-<rect id="quadrat" x="380" y="30" width="140" height="140" />
 </svg>  
 ```
 
 ---
 ### Beispiel für Interaktion (Ergebnis)
 
-<img height="450" data-src="img/E11/interaktion_image.png">
+<style type="text/css">
+#kreis:hover {
+  r: 100px;
+  fill: red;
+}
+</style>
+<div>
+<svg width="600" height="400">
+<circle id="kreis" cx="150" cy="100" r="80" fill="#c32e04" />
+</svg>  
+</div>
 
 <small><a href="https://raw.githubusercontent.com/dh-trier/markup/main/examples/SVG/interactive.html">Code zum Download</a></small>
 
 ---
 ### Beispiel: interaktiver Plot
-<a href="img/E11/sentlen-romans_101+500.svg"><img height="450" data-src="img/E11/sentlen-romans_101+500.svg"></a>
+<embed src="img/E11/sentlen-romans_101+500.svg" height="600" />
+
 
 ---
 ### Beispiel: Animation (Uhr)
 <a href="https://wiki.selfhtml.org/extensions/Selfhtml/frickl.php/Beispiel:SVG-Uhr-5.html#view_result"><img height="450" data-src="img/E11/uhr.png"></a>
 
+<small>
 
+https://wiki.selfhtml.org/extensions/Selfhtml/frickl.php/Beispiel:SVG-Uhr-5.html#view_result
+
+</small>
 
 --
 ## (5) Tools für SVG 
@@ -317,10 +346,22 @@ https://inkscape.org/de/
 
 
 ---
+### GUI: LibreOffice Draw (SVG-Export)
+<img height="450" data-src="img/E11/draw.png">
+
+
+
+---
 ### Python: pygal
 <a href="http://www.pygal.org/en/stable/index.html"><img height="450" data-src="img/E11/pygal.png"></a>
 
 http://www.pygal.org/en/stable/index.html
+
+
+---
+### Pygal-Beispiel (Plot)
+<embed src="examples/SVG/barchart.svg" height="550" />
+
 
 ---
 ### Pygal-Beispiel (Code)
@@ -338,27 +379,31 @@ for item in data:
 chart.render_to_file("barchart.svg")
 ```
 
----
-### Pygal-Beispiel (Plot)
-<a href="examples/SVG/barchart.svg"><img height="450" data-src="img/E11/barchart.png"></a></a>
-
 
 --
 ## Abschluss
+
+---
+### Vorteile von SVG
+* Vektorgrafiken skalieren besser als Pixelgrafiken <!-- .element: class="fragment" data-fragment-index="1" -->
+* Kleinere Vektorgrafiken brauchen sehr wenig Speicherplatz <!-- .element: class="fragment" data-fragment-index="2" -->
+* SVG kann direkt, ohne separate Datei, in HTML eingebettet werden <!-- .element: class="fragment" data-fragment-index="3" -->
+* Kann auch interaktive Elemente und Animationen enthalten <!-- .element: class="fragment" data-fragment-index="4" -->
+* Gegenüber HTML Canvas: kein JavaScript nötig  <!-- .element: class="fragment" data-fragment-index="5" -->
+* Vor allem für Diagramme und Charts geeignet; weniger für Fotos o.ä. <!-- .element: class="fragment" data-fragment-index="6" -->
 
 
 ---
 ### Lektürehinweise 
 
-<small>
-
 Referenzlektüre
-* "Einstieg in SVG", in: SelfHTML Wiki, https://wiki.selfhtml.org/wiki/SVG/Tutorials/Einstieg. 
+
+* "Einstieg in SVG", in: SelfHTML Wiki, https://wiki.selfhtml.org/wiki/SVG/Tutorials/Einstieg. (knappe Einführung)
 
 Weitere Empfehlungen
-* 
 
-</small>
+* Amelia Bellamy-Royds, Kurt Cagle und Dudley Storey. *Using SVG with CSS3 and HTML5. Vector Graphics for Web Design*. O'Reilly 2018. (Umfassend und gut geschrieben.)
+
 
 
 ---
