@@ -40,45 +40,132 @@
 
 --
 ## Überblick 
-1. Warum SVG?
-1. Einstieg in SVG
+1. Einstieg: Was ist SVG?
+1. Grundformen
 
 
 --
-## (1) Warum SVG?
+## (1) Einstieg: Was ist SVG?
 
-
---
-## (2) Einstieg in SVG
 
 ---
-### Minimalbeispiel
+### Was ist SVG
+* Ein XML-basiertes System zur Darstellung von Grafiken
+* Kann in HTML (oder Markdown) integriert werden
+* Folgt den allgemeinen Regeln von XML
+* Kann von Hand geschrieben oder generiert werden
+* Enthält auch interaktive oder dynamische Elemente
+
+
+---
+### Einfaches Beispiel
 
 <svg  width="300" height="200">
-  <rect x="0" y="0" width="100" height="200" fill="blue" />
-  <rect x="100" y="0" width="100" height="200" fill="white" />
-  <rect x="200" y="0" width="100" height="200" fill="red" />
+  <rect x="0" y="0" width="150" height="200" fill="black" />
+  <rect x="150" y="0" width="150" height="200" fill="red" />
+  <circle cx="250" cy="50" r="20" fill="blue" stroke="white" stroke-width="3"/>
 </svg>
 
+<br/><br/>
 
+```xml
+<svg  width="300" height="200">
+  <rect x="0" y="0" width="150" height="200" fill="black" />
+  <rect x="150" y="0" width="150" height="200" fill="red" />
+  <circle cx="250" cy="50" r="20" fill="blue" stroke="white" stroke-width="3"/>
+</svg>
+```
+
+
+--
+## (3) SVG: Grundformen
+
+---
+### Grundformen
+* Rechteck `rect`
+* Kreis `circle`
+* Ellipse `ellipse`
+* Linie `line`
+* Polygonzug `polyline`
+* Polygon `polygon`
+
+
+---
+### Rechteck `rect`
+
+* `x`: horizontale Position der linken oberen Ecke
+* `y`: vertikale Position der linken oberen Ecke
+* `width`: Breite
+* `height`: Höhe
+
+
+---
+### Rechteck: Beispiel
+
+<svg  width="300" height="200">
+  <rect x="0" y="0" width="250" height="150" fill="green" stroke="black" stroke-width="5" />
+</svg>
+
+<br/><br/>
+
+```xml
+<svg  width="300" height="200">
+  <rect x="0" y="0" width="250" height="150" fill="green" stroke="black" stroke-width="5" />
+</svg>
+```
+
+
+---
+### Kreis `circle`
+* `cx`: horizontale Position des Mittelpunktes (`c` = center)
+* `cy`: vertikale Position des Mittelpunktes
+* `r`: Radius
+
+
+---
+### Oval / Ellipse `ellipse` 
+* `cx`: horizontale Position des Mittelpunktes
+* `cy`: vertikale Position des Mittelpunktes
+* `rx`: horizontaler Radius
+* `ry`: vertikaler Radius
+
+
+---
+### Linie `line`
+* `x1`: horizontaler Startpunkt
+* `y1`: vertikaler Startpunkt
+* `x2`: horizontaler Endpunkt
+* `y2`: vertikaler Endpunkt
+
+
+---
+### Polygonzug `polyline`
+
+* Ein Verbund von Linien, der durch mehrere Koordinatenpunkte definiert ist. 
+* Der Polygonzug kann offen sein. 
+* `points`: enthält alle Punkte der Polylinie (ax,ay etc.)
+
+
+---
+### Polygon `polygon`
+* Ein Verbund von Linien, der durch mehrere Koordinatenpunkte definiert ist
+* Das Polygon wird automatisch geschlossen
+* `points`: enthält alle Punkte der Polylinie (ax,ay etc.)
+    
+
+---
+### Weitere Merkmale
+* Für Linien
+  * `stroke`: Linienfarbe
+  * `stroke-width`: Linienbreite 
+* Für Flächen
+  * `fill`: Farbe der Füllung
 
 
 
 
 ---
-### Minimalbeispiel
-
-<svg  width="300" height="200" viewbox="0 0 3 2">
-  <desc>Flagge Frankreichs</desc>
-  <rect x="0" y="0" width="1" height="2" fill="#0055A4" />
-  <rect x="1" y="0" width="1" height="2" fill="white" />
-  <rect x="2" y="0" width="1" height="2" fill="#EF4531" />
-</svg>
-
-
-
----
-### Weitere geometrische Formen
+### Beispiel: Geometrische Formen
 
 <svg width="300" height="200" viewbox="0 0 10 11">
   <desc>Wappen der Schweiz</desc>
@@ -102,13 +189,43 @@
 ```
 
 
+--
+## (3) Styling mit CSS
+
+
+---
+### Grundidee
+* Wie bei HTML: Trennung von Inhalt und Darstellung
+* Bei SVG: Darstellung über Attribute oder CSS möglich
+* Vorteile von CSS-Nutzung
+  * SVG-Code wird übersichtlicher
+  * Design-Änderungen sind leichter umzusetzen
+
+
+---
+### SVG+CSS: Einfaches Beispiel (Code)
+
+<img height="450" data-src="img/E11/SVG-CSS_code.png">
+
+
+---
+### SVG+CSS: Einfaches Beispiel (Ergebnis)
+
+<img height="450" data-src="img/E11/SVG-CSS_image.png">
+
+
+
+
+
+
+
 ---
 ### Lektürehinweise 
 
 <small>
 
 Referenzlektüre
-* 
+* "Einstieg in SVG", in: SelfHTML Wiki, https://wiki.selfhtml.org/wiki/SVG/Tutorials/Einstieg. 
 
 Weitere Empfehlungen
 * 
