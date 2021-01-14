@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Auszeichnungssprachen</title>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/simple.css" id="theme">
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+<body>
+	<div class="reveal">
+	<div class="slides">
+
+<section data-markdown=""
+         data-separator="^\n--\n" 
+         data-separator-vertical="^\n---\n" 
+         data-separator-notes="^::" 
+         data-charset="utf-8" 
+         data-background-image="img/basics/uni-trier_icon.png" 
+         data-background-size="70px" 
+         data-background-position="right 10px top 10px">
+
+<!-- ============ BEGINNING OF SLIDE CONTENT =========== -->
+
+<textarea data-template>
+# SVG: Scalable Vector Graphics
+<br/>
+<hr/>
+<br/>Prof. Dr. Christof Schöch
+<br/>
+<br/>
+<hr/>
+<p><strong>Modul Auszeichnungssprachen<br/>MSc. Digital Humanities, Universität Trier</strong></p>
+<hr/>
+<img height="60" data-src="img/basics/uni-trier.png">
+
+
+--
+## Überblick 
+1. Warum SVG?
+1. Einstieg in SVG
+
+
+--
+## (1) Warum SVG?
+
+
+--
+## (2) Einstieg in SVG
+
+---
+### Minimalbeispiel
+
+<svg  width="300" height="200">
+  <rect x="0" y="0" width="100" height="200" fill="blue" />
+  <rect x="100" y="0" width="100" height="200" fill="white" />
+  <rect x="200" y="0" width="100" height="200" fill="red" />
+</svg>
+
+
+
+
+
+
+---
+### Minimalbeispiel
+
+<svg  width="300" height="200" viewbox="0 0 3 2">
+  <desc>Flagge Frankreichs</desc>
+  <rect x="0" y="0" width="1" height="2" fill="#0055A4" />
+  <rect x="1" y="0" width="1" height="2" fill="white" />
+  <rect x="2" y="0" width="1" height="2" fill="#EF4531" />
+</svg>
+
+
+
+---
+### Weitere geometrische Formen
+
+<svg width="300" height="200" viewbox="0 0 10 11">
+  <desc>Wappen der Schweiz</desc>
+  <rect x="0" y="0" width="11" height="6" fill="red" />
+  <circle cx="5" cy="6" r="5" fill="red" />
+  <line id="quer" x1="2"  y1="5" x2="8" y2="5" stroke="white" stroke-width="2" />
+  <line id="hoch" x1="5"  y1="2" x2="5" y2="8" stroke="white" stroke-width="2" />
+</svg>
+
+<br/>
+<br/>
+
+```
+<svg width="300" height="200" viewbox="0 0 10 11">
+  <desc>Wappen der Schweiz</desc>
+  <rect x="0" y="0" width="10" height="6" fill="red" />
+  <circle cx="5" cy="6" r="5" fill="red" />
+  <line id="quer" x1="2"  y1="5" x2="8" y2="5" stroke="white" stroke-width="2" />
+  <line id="hoch" x1="5"  y1="2" x2="5" y2="8" stroke="white" stroke-width="2" />
+</svg>
+```
+
+
+---
+### Lektürehinweise 
+
+<small>
+
+Referenzlektüre
+* 
+
+Weitere Empfehlungen
+* 
+
+</small>
+
+
+---
+### Danke!
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<hr/>
+<small>
+<br/>Lizenz: <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution (CC BY)</a>, 2021. 
+</small>
+<hr/>
+
+
+
+
+</textarea>
+
+<!-- ============ END OF SLIDE CONTENT =========== -->
+
+</section>
+
+	</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+            progress: true,
+            slideNumber: true,
+            fragments: true,
+            center: false,
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+		});
+	</script>
+</body>
+</html>
