@@ -26,7 +26,7 @@
 <!-- ============ BEGINNING OF SLIDE CONTENT =========== -->
 
 <textarea data-template>
-# SVG: Scalable Vector Graphics
+# Markdown statt Markup
 <br/>
 <hr/>
 <br/>Prof. Dr. Christof Schöch
@@ -47,10 +47,84 @@
 
 ---
 ### Alternativen zu XML / HTML / DOCX
-* MediaWiki Syntax
-* LaTeX
-* Markdown
+* MediaWiki Syntax (Wikipedia)
+* LaTeX (Naturwissenschaften, Linguistik)
+* Markdown (inzwischen weit verbreitet)
 * und einige mehr! 
+
+
+---
+### Markdown vereinfacht HTML
+* ...deckt eine Teilmenge von HTML ab
+* verzichtet auf die Tags
+* verwendet statt dessen wenige, einfache Codes
+* kann durch HTML (und SVG) ergänzt werden
+* ist auch unmittelbar schon gut lesbar
+* kann leicht in HTML transformiert werden
+* kann für Artikel, Präsentationen, Bücher etc. verwendet werden
+
+
+--
+## (2) Markdown-Syntax
+
+
+---
+### Überschriften: Heading 	
+
+```
+# H1
+## H2
+### H3
+#### H4
+```
+
+# H1
+## H2
+### H3
+#### H4
+
+
+---
+### Textformatierung
+
+```
+Bold 	**bold text**
+Italic 	*italicized text*
+Blockquote 	> blockquote
+```
+
+* Bold 	**bold text**
+* Italic 	*italicized text*
+* Blockquote 	> blockquote
+
+
+
+
+Ordered List 	1. First item
+2. Second item
+3. Third item
+Unordered List 	- First item
+- Second item
+- Third item
+Code 	`code`
+Horizontal Rule 	---
+Link 	[title](https://www.example.com)
+Image 	![alt text](image.jpg)
+
+
+
+
+
+
+--
+## (3) Markdown zu X: pandoc
+
+
+---
+### Was ist pandoc?
+* Ein Kommandozeilen-Tool für die Transformation von Dokumenten
+* Rund 50 verschiedene Textformate können ineinander transformiert werden
+* Nutzt auch Layout-Templates und Bibliographien
 
 
 --
