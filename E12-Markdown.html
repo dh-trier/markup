@@ -67,53 +67,19 @@
 --
 ## (2) Markdown-Syntax
 
-
 ---
-### Überschriften: Heading 	
-
-```
-# H1
-## H2
-### H3
-#### H4
-```
-
-# H1
-## H2
-### H3
-#### H4
+### Wir wechseln in Atom
+* Atom mit 'Markdown Preview'-Plugin
+* Ordner: https://github.com/dh-trier/markup/tree/main/examples/Markdown
+* Datei: markdown-syntax.md
+* Herunterladen und mit Atom öffnen
+* Strg+Shift+M: aktiviert Markdown-Preview
 
 
 ---
-### Textformatierung
-
-```
-Bold 	**bold text**
-Italic 	*italicized text*
-Blockquote 	> blockquote
-```
-
-* Bold 	**bold text**
-* Italic 	*italicized text*
-* Blockquote 	> blockquote
-
-
-
-
-Ordered List 	1. First item
-2. Second item
-3. Third item
-Unordered List 	- First item
-- Second item
-- Third item
-Code 	`code`
-Horizontal Rule 	---
-Link 	[title](https://www.example.com)
-Image 	![alt text](image.jpg)
-
-
-
-
+### Kompakt zum Nachschauen
+* Basic Syntax: https://www.markdownguide.org/basic-syntax/
+* Extended Syntax: https://www.markdownguide.org/extended-syntax/
 
 
 --
@@ -124,7 +90,84 @@ Image 	![alt text](image.jpg)
 ### Was ist pandoc?
 * Ein Kommandozeilen-Tool für die Transformation von Dokumenten
 * Rund 50 verschiedene Textformate können ineinander transformiert werden
-* Nutzt auch Layout-Templates und Bibliographien
+* Nutzt auch Layout-Templates, Bibliographien, Zitierstile
+* Siehe: https://pandoc.org/
+
+---
+### Minimales pandoc-Beispiel
+
+```
+pandoc textdatei.md -o ergebnis.html
+```
+
+---
+### Angabe von Optionen 
+* Syntax: `pandoc [Optionen] input.md -o output.html`
+ 
+
+---
+### Befehle für Input und Output-Format
+* Format für Input und Output werden an der Endung erkannt 
+* Einige Formate: docx, odt, epub2, epub3, gfm, html, mediawiki, (pdf)
+* Wenn die Erkennung nicht klappt:
+  * `--from`: aus welchem Format wird konvertiert?
+  * `--to`: in welches Format wird konvertiert? 
+
+
+---
+### Einige weitere Optionen
+* `--number-sections`: durchnummerierte Überschriften
+* `--standalone``: bei HTML: vollständige Datei mit Header
+* `--toc`: erzeugt ein Inhaltsverzeichnis
+* `--css datei.css` oder kurz: `-c datei.css` <br/>(erfordert eine CSS-Datei)
+
+
+--
+## (3) Einbinden von Referenzen
+
+---
+### Beispiel: benötigte Dateien 
+* Kurzer Beispieltext in Markdown: `artikel.md`
+* Bibliographie in BibTex: `bibliographie.bib`
+* Zitierstil in CSL: `styles/mhra.csl`
+* Bilddatei: `img/wikidata-logo.png`
+* Außerdem eine CSS-Datei: `artikelstyle.css`
+
+
+---
+### Beispiel: Ordneransicht
+<img src="dateien.png" height="550"/>
+
+
+---
+### Transformation zu HTML
+
+```
+pandoc --filter pandoc-citeproc --csl styles/visual-studies.csl --bibliography bibliographie.bib --css artikelstyle.css --toc --self-contained --number-sections --to html5 -i artikel.md -o artikel.html 
+```
+
+---
+### Ergebnis
+<img src="html-artikel.png" height="550"/>
+
+
+---
+### Transformation zu PDF
+
+```
+pandoc --metadata pagetitle="Wikipedia and Wikidata" --filter pandoc-citeproc --csl styles/mhra.csl --bibliography bibliographie.bib --number-sections -V geometry:margin=2.5cm --variable=geometry:a4paper -i artikel.md -o artikel.pdf
+```
+
+---
+### Ergebnis
+<img src="pdf-artikel.png" height="550"/>
+
+
+
+
+
+
+
 
 
 --
@@ -140,6 +183,8 @@ Image 	![alt text](image.jpg)
 ### Nachteile von Markdown
 * Mischung von Markdown und HTML ist unschön
 * Kann nicht validiert werden
+* Die vielen Varianten machen es etwas unübersichtlich
+
 
 
 ---
